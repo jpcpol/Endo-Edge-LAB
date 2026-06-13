@@ -34,8 +34,27 @@ DSS edge                     DSS refinado + RTM + Catálogo   LOINC / ICD-10
 ## Hardware Node 1
 
 - **MCU principal**: Analog Devices MAX78002 (Cortex-M4F 120 MHz + RISC-V 60 MHz + CNN Accelerator 200 MHz)
-- **Coprocesador comunicaciones**: Nordic nRF52840
-- **BAN (Body Area Network)**: ECG (Hexoskin ProShirt 256 Hz), glucosa ISF (Dexcom G7), GSR/EDA (Empatica EmbracePlus), lactato ISF (PKvitality), iones sudor Na+/K+ (Epicore), temperatura (Empatica), IMU
+- **Coprocesador comunicaciones**: Seeed XIAO nRF52840 (antena chip integrada, BLE 5.0, UART → MAX78002)
+- **CGM**: FreeStyle Libre 2 → Juggluco (Android) → BLE → Seeed XIAO nRF52840 → UART → MAX78002
+- **ECG / HRV / FC**: Polar H10 (chest strap, 130 Hz, ECG raw µV) → BLE → Seeed XIAO nRF52840
+- **Temperatura continua**: Termistor NTC externo → ADC MAX78002 (directo)
+- **IMU**: Acelerómetro/giroscopio → SPI MAX78002 (directo)
+
+### Ruta de adquisición por fases
+
+**Fase 1 (actual):**
+
+- CGM: FreeStyle Libre 2 -> Juggluco -> Smartphone -> Seeed XIAO nRF52840 -> UART -> MAX78002
+- Cardiaco: Polar H10 -> BLE -> Seeed XIAO nRF52840 -> UART -> MAX78002
+- Temperatura: Termistor NTC -> ADC MAX78002 (directo)
+- Edge: MAX78002 en modo correlacion y recoleccion de datos
+
+**Fase 3 (objetivo):**
+
+- CGM: FreeStyle Libre 2 NFC directo -> MAX78002 (experimental, ingenieria inversa cifrado)
+- Cardiaco: idem Fase 1
+- Temperatura: idem Fase 1
+- Edge: MAX78002 inferencia autonoma sin smartphone
 
 ## Modelos de IA
 
