@@ -23,10 +23,9 @@ RTM Risk Trend Marker (5 zonas): tendencia temporal del DSS en pts/semana
 Catálogo LAB Fase I Probabilidades diferenciales para 10 patologías metabólicas/endocrinas
 Objetivos de rendimiento: AUROC ≥ 0.88 (LAB), ≥ 0.85 (WEAR), ≥ 0.90 (integrado).
 
-Estudio clínico
-Protocolo: EE-2026-002-FASE1B v2.1
-Diseño: híbrido retrospectivo-prospectivo | N=50 | 18 meses prospectivos
-Ventana de anticipación objetivo: 3–5 años (Fase I), 18 meses reales (Fase III)
+Marco de investigación
+Diseño: estudio longitudinal N=1, monitorización continua personal
+Síndrome de Schmidt (APS-2) — Diabetes tipo 1 — Insuficiencia adrenal primaria
 Marco regulatorio: Ley 26.529, Ley 25.326, ISO 14155:2020, IEC 62304, HL7 FHIR R4
 Stack tecnológico
 
@@ -37,6 +36,5 @@ Backend Nodo 2        Python 3.11 · FastAPI · HAPI FHIR R4 · Java 17
 Interoperabilidad     HL7 FHIR R4 · LOINC · ICD-10 · MessagePack
 Titularidad intelectual
 Juan Pablo Chancay (Aural-Syncro) — IP, arquitectura, firmware, algoritmos (PI-001 v1.3, DNDA Marzo 2026)
-Dra. Alejandra Cicchitti — Co-titular del Catálogo Diferencial de Probabilidades y Protocolo de Interpretación del RTM
 
 Contacto: <juanpablo.chancay@aural-syncro.com.ar> - <www.aural-syncro.com.ar>
